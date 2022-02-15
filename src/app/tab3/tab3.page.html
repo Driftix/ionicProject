@@ -7,11 +7,74 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 3</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <div class="maListe">
+    <h3>Tram</h3>
+    <div>
+      <p *ngFor="let unTram of tram" (click)="displayArrets(unTram)" class="p" [style.background-color]="'#'+unTram.color">{{unTram.shortName}}</p>
+    </div>
+    <br>
 
-  <app-explore-container name="Tab 3 page"></app-explore-container>
+    <h3>Navette Relais</h3>
+
+    <br>
+    <div class="color">
+      <p *ngFor="let uneNavette of navette" (click)="displayArrets(uneNavette)" class="p" [style.background-color]="'#'+uneNavette.color">{{uneNavette.shortName}}</p>
+    </div>
+    <br>
+
+    <h3>Chrono</h3>
+
+    <br>
+    <div class="color">
+      <p *ngFor="let unChrono of chrono"(click)="displayArrets(unChrono)" class="p" [style.background-color]="'#'+unChrono.color">{{unChrono.shortName}}</p>
+    </div>
+    <br>
+
+    <h3>Proximo</h3>
+
+    <br>
+    <div class="color">
+      <p *ngFor="let unProximo of proximo"(click)="displayArrets(unProximo)" class="p" [style.background-color]="'#'+unProximo.color">{{unProximo.shortName}}</p>
+    </div>
+    <br>
+
+    <h3>Flexo</h3>
+
+    <br>
+    <div class="color">
+      <p *ngFor="let unFlexo of flexo"(click)="displayArrets(unFlexo)" class="p" [style.background-color]="'#'+unFlexo.color">{{unFlexo.shortName}}</p>
+    </div>
+    <br>
+
+    <h3>Cars Région Express</h3>
+
+    <br>
+    <div class="color">
+      <p *ngFor="let unCarsRegionExpress of carsRegionExpress"(click)="displayArrets(unCarsRegionExpress)" class="pSpace" [style.background-color]="'#'+unCarsRegionExpress.color">{{unCarsRegionExpress.shortName}}</p>
+    </div>
+    <br>
+
+    <h3>Cars Région</h3>
+
+    <br>
+    <div class="color">
+      <p *ngFor="let unCarsRegion of carsRegion" (click)="displayArrets(unCarsRegion)"class="pSpace" [style.background-color]="'#'+unCarsRegion.color">{{unCarsRegion.shortName}}</p>
+    </div>
+    <br>
+
+    <h3>TouGo</h3>
+
+    <br>
+    <div class="color">
+      <p *ngFor="let unTouGo of touGo"(click)="displayArrets(unTouGo)" class="pSpace" [style.background-color]="'#'+unTouGo.color">{{unTouGo.shortName}}</p>
+    </div>
+    <br>
+
+    <h3>Pays Voironnais</h3>
+
+    <br>
+    <div class="color">
+      <p *ngFor="let unPaysVoironnais of paysVoironnais" (click)="displayArrets(unPaysVoironnais)"class="pCarre" [style.background-color]="'#'+unPaysVoironnais.color">{{unPaysVoironnais.shortName}}</p>
+    </div>
+  </div>
 </ion-content>
