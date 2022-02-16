@@ -24,14 +24,20 @@ export class MapService {
     // eslint-disable-next-line @typescript-eslint/no-shadow
     let marker: DataMarker;
     for(let arret of arretsAuxAlentours){
-      marker = new DataMarker(new LatLng(arret['lat'],arret['lon']),arret);
-      marker.on('click',this.displayMarkerProperties);
-      this.map.addLayer(marker);
+      //Changer plus tard
+      const data = await this.requestService.requestTypeLigne(arret['lines'][0]);
+    if(data[0]['mode'] === 'BUS'){
+        marker = new DataMarker(new LatLng(arret['lat'],arret['lon']),arret);
+        marker.on('click',this.displayMarkerProperties);
+        marker.bindPopup(arret['name']);
+        this.map.addLayer(marker);
+      }
     }
   }
 
 
   displayMarkerProperties(e){
+    //this.map.openPopup(e.target.customDataid.name);
     console.log(e.target.customDataid.name);
   }
 }

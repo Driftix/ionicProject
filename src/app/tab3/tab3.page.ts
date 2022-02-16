@@ -17,6 +17,7 @@ export class Tab3Page implements OnInit{
   carsRegion: Array<ILigne> = [];
   touGo: Array<ILigne> = [];
   paysVoironnais: Array<ILigne> = [];
+
   constructor(private serviceResquest: RequestService, private event: EventsService) {
     if(this.serviceResquest.arrets.length === 0 && this.serviceResquest.lignes.length === 0){this.serviceResquest.buildArrets();this.serviceResquest.buildLignes();}else{
       this.startRecupLigne();
@@ -67,6 +68,7 @@ export class Tab3Page implements OnInit{
   ngOnInit() {
 
   }
+
   startRecupLigne(){
     this.recupLigne();
   }
